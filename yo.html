@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+    <title>Dark Mode Project</title>
+    <style>
+        /* RESET AND CORE SETUP */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /*This forces any square image into a perfect circle */
+            object-fit: cover; /*This prevents the image from looking stretched*/
+            border: 4px solid #1abc9c; /* Adds a nice glowing boundary ring around your photo */
+            display:block;
+            margin: 0 auto 20px auto; /* Centers the Image and pushes the text downward*/
+            Box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+        }
+        body { 
+            font-family:'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          
+            transition: background-color 0.4s ease , color 0,4s ease ;
+        
+        }
+
+        button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight:600;
+        cursor: pointer;
+        border-radius : 20px;
+        border: 2px solid #2c3e50;
+        background-color: #ffffff;
+        color: #2c3e50;
+        transition: all 0.3s ease;
+        }
+
+        /* profile container Box */
+        .Profile-card {
+            background-color: #ffffff;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px  rgba(0,0,0,0.05);
+            text-align: left;
+            transition: background-color 0.4s ease;
+           
+        } 
+        /*Moves the button discretely to the top right corner of the screen */
+        #mode-btn {
+            position:absolute;
+            top:20px;
+            right:20px;
+            padding: 8px 16px;
+            font-size: 13px; /*Slightly smaller text*/
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 20px;
+            border: 1px solid #7f8c8d; /*Thinner border for a cleaner profile look*/
+            background-color: #ffffff;
+            color: #2c3e50;
+            box-shadow: o 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            z-index: 100; /* Ensures it always floats perfectly on top of elements*/
+
+
+
+        }
+
+        /* Make sure the buttons colors shift beautifully inside dark mode too*/
+        body.dark-mode #mode-btn {
+            background: #2a2a2a;
+            color: #ffffff;
+            border-color: #555555;
+            
+        }
+
+h1 { margin-top:0; color: #1abc9c; }
+h3 { margin-bottom: 15px; font-weight: 500; }
+p  { line-height: 1.6; color: #7f8c8d; }
+
+.skils-box  {
+    margin-top: 25px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.4s ease;
+
+}
+
+ul{ padding-left: 20px; margin: 5px 0 0 0; }
+li{ margin: 8px 0; list-style: none; }
+ /* 🌙 DARK MODE STATES*/
+ body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+
+ }
+ body.dark-mode .Profile-card{ 
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+ }
+
+ body.dark-mode p {color: #b0b0b0; }
+body.dark-mode .skils-box { background: #2a2a2a; }
+ body.dark-mode button {
+    background-color: #2a2a2a;
+    color:  #ffffff;
+    border-color: #ffffff;
+
+ }
+
+ 
+    </style>
+    </head>
+    <body>
+        <!--THEME TOGGLE AREA-->
+        <div class="header-actions">
+            <button id="mode-btn" >Dark Mode 🌙</button>
+        </div>
+            
+
+            <!--MAIN PROFILE CARD BOX-->
+            <div class="profile-card">
+
+<img src="asa.jpg.jfif" alt="PROFILE PICTURE" class="profile-img">
+                <h1>Hi, I'm RAGHAV 😊</h1>
+                <h3>FIRST-YEAR Computer Science Student</h3>
+                <p>WELCOME TO MY VERY FIRST WEB DEVELOPEMENT PROJECT! I AM CURRENTLY LEARNING HOW TO BUILD CLEAN, RESPONSIVE USER INTERFACES USING HTML,CSS,JAVASCRIPT. </p>
+
+                <div class="skills-box">
+                    <h4>WHAT I'M LEARNING:</h4>
+                    <ul>
+                        <li>💻 HTML5 (page structure)</li>
+<li>🖌️ CSS3 (layout and styling)</li>
+<li>🧠 JAVASCRIPT (logic and interativity)</li>
+                    </ul>
+                </div>
+            </div>
+           
+
+
+    
+    <script>
+        const button = document.getElementById('mode-btn');
+
+        button.addEventListener('click', function() {
+
+        // 1. Flip the background color
+       document.body.classList.toggle('dark-mode');
+
+       
+          
+        //2. Check if the body now contains the dark-mode class
+        if (document.body.classList.contains('dark-mode')) {
+           button.innerText= "Light Mode 🌞";// If it is dark,show sun icon
+        } else {
+            button.innerText = "Dark Mode 🌚"; //IF it is light,show moon icon
+        }
+
+
+        });
+    </script>
+    </body>
+</html>
