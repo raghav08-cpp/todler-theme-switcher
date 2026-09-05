@@ -8,17 +8,7 @@ A brief description of your project and what it does.
 - [Other feature 1]
 - [Other feature 2]
 
-## 🎥 Demo
 
-Add a GIF showing the toggle in action:
-
-![Theme Toggle Demo](./path/to/demo.gif)
-
-| Dark Mode | Bright Mode |
-| --- | --- |
-| ![Dark Mode](./path/to/dark.png) | ![Bright Mode](./path/to/light.png) |
-
-## 🚀 Usage
 
 Explain how to use the toggle in your app:
 
